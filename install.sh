@@ -19,7 +19,11 @@ echo "--- Updating packages list ---"
 sudo apt-get update
 
 echo "--- Installing PHP-specific packages ---"
-sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core
+sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core phpunit
+
+echo "--- Ask Pear to help us with PHPunit errors"
+sudo pear config-set auto_discover 1
+sudo pear install pear.phpunit.de/PHPUnit
 
 echo "--- Installing and configuring Xdebug ---"
 sudo apt-get install -y php5-xdebug
@@ -34,8 +38,8 @@ echo "--- Enabling mod-rewrite ---"
 sudo a2enmod rewrite
 
 echo "--- Setting document root ---"
-sudo rm -rf /var/www
-sudo ln -fs /vagrant/public /var/www
+sudo rm -rf /var/www/html
+sudo ln -fs /vagrant/ /var/www/html
 
 
 echo "--- What developer codes without errors turned on? Not you, master. ---"
