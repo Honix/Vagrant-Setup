@@ -1,4 +1,6 @@
-My install Bash script for Vagrant.
+Jeffrey Way's install Bash script for Vagrant.
+
+ATTENTION PLEASE : Run "vagrant plugin install vagrant-vbguest" this will avoid alot of troubles.
 
 Thanks goes to the following references:
 
